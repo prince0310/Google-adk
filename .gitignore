@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Track these folders
+!google_search_agent/
+!google_search_agent/**
+
+!multi_agent/
+!multi_agent/**
+
+# Track the .gitignore itself
+!.gitignore
