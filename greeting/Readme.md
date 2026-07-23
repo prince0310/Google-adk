@@ -28,10 +28,31 @@ root_agent = Agent(
     instruction="..."
 )
 ```
+or 
+```
+root_agent = Agent(
+    name = "my_first_agent",
+    description = "A casual and funny agent that greets the user",
+    model=LiteLlm(
+            model="groq/llama-3.3-70b-versatile"
+        ),
+    instruction="""
+                You are a friendly, casual, and slightly funny assistant.
+
+                Your job:
+                - Greet the user in a relaxed and cheerful way
+                - Lightly joke, but stay professional
+                - Ask for the user's name if you don't know it
+                - Keep messages short and natural
+
+                Avoid sarcasm or offensive humor.
+                """,)
+
+```
 
 An Agent needs:
 - **name**: Unique identifier for the agent
-- **model**: Which AI model to use (here: `gemini-2.0-flash`)
+- **model**: Which AI model to use (here: `gemini-2.0-flash`, `groq/llama-3.3-70b-versatile`)
 - **description**: Brief summary of what the agent does
 - **instruction**: Detailed guide on how the agent should behave
 
@@ -78,7 +99,7 @@ Agent follows instruction (be friendly, casual, funny)
 Agent: "Hey there! 👋 Great to see you! I'm your friendly greeting bot.
        What's your name?"
     ↓
-You: "I'm Sarah"
+You: "I'm Prince"
     ↓
 Agent remembers context from conversation
     ↓
